@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora de Custos em Nuvem</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Calculadora de Custos em Nuvem</h1>
+        
+        <form id="calcForm">
+            <label for="on_demand_hourly">Preço por hora On-Demand ($):</label>
+            <input type="number" step="0.0001" id="on_demand_hourly" required value="0.0461" readonly>
+
+            <label for="hours_per_month">Horas por mês:</label>
+            <input type="number" id="hours_per_month" value="730" readonly>
+
+            <label for="reserved_discount_pct">Desconto (%) Reservada:</label>
+            <input type="number" id="reserved_discount_pct" required>
+
+            <label for="instances_total">Total de Instâncias:</label>
+            <input type="number" id="instances_total" required>
+
+            <label for="reserved_upfront_monthly">Upfront mensal por instância reservada ($):</label>
+            <input type="number" step="0.01" id="reserved_upfront_monthly" value="0">
+
+            <label for="reserved_share_pct">% de Instâncias Reservadas:</label>
+            <input type="number" id="reserved_share_pct" min="0" max="100" required>
+
+            <button type="submit">Calcular</button>
+        </form>
+
+        <div id="results" style="display: none;"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
